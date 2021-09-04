@@ -1,0 +1,128 @@
+{
+	"info": {
+		"_postman_id": "a5d0dd70-6cd4-4d5d-8537-657dba9382be",
+		"name": "To Do List",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TaskList",
+			"item": [
+				{
+					"name": "fetch taskList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/tasklist",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"tasklist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Task by Id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\":\"DONE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/taskList/661a6c7f022752dae0a7fd622631a80f8812b2f0/task/f1ab0a845e3f1158f2df628fd8b7c88f66dce260",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"taskList",
+								"661a6c7f022752dae0a7fd622631a80f8812b2f0",
+								"task",
+								"f1ab0a845e3f1158f2df628fd8b7c88f66dce260"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add task to Tasklist",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"taskTitle\":\"sadas11111d\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/tasklist",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"tasklist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove task from Tasklist",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/taskList/661a6c7f022752dae0a7fd622631a80f8812b2f0/task/2cd2f91911a5eba5b98aa192469e7a240516e9c8",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"taskList",
+								"661a6c7f022752dae0a7fd622631a80f8812b2f0",
+								"task",
+								"2cd2f91911a5eba5b98aa192469e7a240516e9c8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove tasklist",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/tasklist",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"tasklist"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
