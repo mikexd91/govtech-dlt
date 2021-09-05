@@ -1,6 +1,10 @@
 const crypto = require("crypto");
-const { Task } = require("./task");
 
+/**
+ * @typedef TaskList
+ * @property {string} id
+ * @property {Array.<Task>} tasks.required - Contains array of Tasks object
+ */
 class TaskList {
   constructor() {
     this.taskList = {

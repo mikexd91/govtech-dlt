@@ -15,27 +15,18 @@ exports.failure = (res, error) => {
   if (!process.env.DEBUG) {
     SIGNALE.error(error);
   }
-  switch (error.name) {
-    case "ValidationError":
-      const validationError = new ValidationError();
-      return sendErrResponse(res, validationError);
-    case "BadRequestError":
-      const badRequestError = new BadRequestError();
-      return sendErrResponse(res, badRequestError);
-    default:
-      const internalServerError = new InternalServerError();
-      return sendErrResponse(res, internalServerError);
-  }
+  return sendErrResponse(res, error);
 };
 
 // ---- Supporting Methods ----
 const sendErrResponse = (res, error) => {
+  console.log(error.message);
   res.status(error.code).send({
     status: {
       code: error.code,
       description: error.description,
     },
-    data: error.message,
+    data: error,
   });
 };
 
