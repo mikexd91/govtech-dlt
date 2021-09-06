@@ -1,0 +1,318 @@
+{
+	"info": {
+		"_postman_id": "a5d0dd70-6cd4-4d5d-8537-657dba9382be",
+		"name": "To Do List",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TaskList",
+			"item": [
+				{
+					"name": "fetch all taskList",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/v1/api/tasklist/all?user=13b8bf9ee3efd7642a82374938eabc9a24a87b57",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"api",
+								"tasklist",
+								"all"
+							],
+							"query": [
+								{
+									"key": "user",
+									"value": "13b8bf9ee3efd7642a82374938eabc9a24a87b57"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fetch taskList by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/v1/api/tasklist/89d3361ffc8675fe11e00b0196dc851cacc4abf4?user=13b8bf9ee3efd7642a82374938eabc9a24a87b57",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"api",
+								"tasklist",
+								"89d3361ffc8675fe11e00b0196dc851cacc4abf4"
+							],
+							"query": [
+								{
+									"key": "user",
+									"value": "13b8bf9ee3efd7642a82374938eabc9a24a87b57"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add task to Tasklist",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"taskTitle\":\"hello\",\n    \"priority\":\"HIGH PRIORITY\",\n    \"isPrivate\": true,\n    \"dueDate\": \"05-09-2021\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/v1/api/tasklist/694873645592147f103e31deb776685fde62f425?user=b8d0833db25573548e7149a5a333d4d619f25857",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"api",
+								"tasklist",
+								"694873645592147f103e31deb776685fde62f425"
+							],
+							"query": [
+								{
+									"key": "user",
+									"value": "b8d0833db25573548e7149a5a333d4d619f25857"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Task by Id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\":\"DONE\",\n    \"priority\":\"MEDIUM Priority\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/v1/api/tasklist/694873645592147f103e31deb776685fde62f425/task/1ad63e6c77dd9a1c9cbbc6892920c7c6f2a98d69?user=b8d0833db25573548e7149a5a333d4d619f25857",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"api",
+								"tasklist",
+								"694873645592147f103e31deb776685fde62f425",
+								"task",
+								"1ad63e6c77dd9a1c9cbbc6892920c7c6f2a98d69"
+							],
+							"query": [
+								{
+									"key": "user",
+									"value": "b8d0833db25573548e7149a5a333d4d619f25857"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove task from Tasklist",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/v1/api/tasklist/694873645592147f103e31deb776685fde62f425/task/1ad63e6c77dd9a1c9cbbc6892920c7c6f2a98d69?user=b8d0833db25573548e7149a5a333d4d619f25857",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"api",
+								"tasklist",
+								"694873645592147f103e31deb776685fde62f425",
+								"task",
+								"1ad63e6c77dd9a1c9cbbc6892920c7c6f2a98d69"
+							],
+							"query": [
+								{
+									"key": "user",
+									"value": "b8d0833db25573548e7149a5a333d4d619f25857"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove tasklist",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/v1/api/tasklist",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"api",
+								"tasklist"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "fetch users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/v1/api/user",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user by Id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"mikey\",\n    \"friends\":[\n        \"7022b34f084b4af94f257e424be85fab90dba1e6\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/v1/api/user/65922f49e4b9db5a185a45d2c061fbd273dc081f",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"api",
+								"user",
+								"65922f49e4b9db5a185a45d2c061fbd273dc081f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"mikey\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/v1/api/user/register",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"mikey\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/v1/api/user/login",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

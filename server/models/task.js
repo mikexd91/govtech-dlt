@@ -1,5 +1,6 @@
-const crypto = require("crypto");
-const { DEFAULT_STATUS, LOW_PRIORITY } = require("../constant/constant");
+/* eslint-disable class-methods-use-this */
+const crypto = require('crypto');
+const { DEFAULT_STATUS, LOW_PRIORITY } = require('../constant/constant');
 
 /**
  * @typedef Task
@@ -11,24 +12,29 @@ const { DEFAULT_STATUS, LOW_PRIORITY } = require("../constant/constant");
  */
 class Tasks {
   constructor(task, priority, dueDate) {
-    this.taskId = crypto.randomBytes(20).toString("hex");
+    this.taskId = crypto.randomBytes(20).toString('hex');
     this.task = task;
-    this.priority = priority || LOW_PRIORITY; //default low priority
+    this.priority = priority || LOW_PRIORITY; // default low priority
     this.status = DEFAULT_STATUS;
-    this.dueDate = dueDate || "null";
+    this.dueDate = dueDate || 'null';
   }
+
   getTaskId() {
     return this.taskId;
   }
+
   getTask() {
-    return this.task;
+    return this.isPrivate ? '' : this.task;
   }
+
   getTaskStatus() {
     return this.status;
   }
+
   getTaskPriority() {
     return this.priority;
   }
+
   getTaskDueDates() {
     return this.dueDate;
   }

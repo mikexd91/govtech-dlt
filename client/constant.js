@@ -1,11 +1,11 @@
 // STATUS
-export const DEFAULT_STATUS = "NOT DONE";
-export const IN_PROGRESS_STATUS = "IN PROGRESS";
-export const UNDER_REVIEW_STATUS = "UNDER REVIEW";
-export const BLOCKED_STATUS = "BLOCKED";
-export const DONE_STATUS = "DONE";
+export const DEFAULT_STATUS = 'NOT DONE';
+export const IN_PROGRESS_STATUS = 'IN PROGRESS';
+export const UNDER_REVIEW_STATUS = 'UNDER REVIEW';
+export const BLOCKED_STATUS = 'BLOCKED';
+export const DONE_STATUS = 'DONE';
 
 // PRIORITY
-export const HIGH_PRIORITY = "HIGH PRIORITY";
-export const MEDIUM_PRIORITY = "MEDIUM PRIORITY";
-export const LOW_PRIORITY = "LOW PRIORITY";
+export const HIGH_PRIORITY = 'HIGH PRIORITY';
+export const MEDIUM_PRIORITY = 'MEDIUM PRIORITY';
+export const LOW_PRIORITY = 'LOW PRIORITY';

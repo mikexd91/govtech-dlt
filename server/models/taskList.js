@@ -1,4 +1,4 @@
-const crypto = require("crypto");
+const crypto = require('crypto');
 
 /**
  * @typedef TaskList
@@ -8,10 +8,12 @@ const crypto = require("crypto");
 class TaskList {
   constructor() {
     this.taskList = {
-      id: crypto.randomBytes(20).toString("hex"),
-      tasks: [],
+      id: crypto.randomBytes(20).toString('hex'),
+      publicTasks: [],
+      privateTasks: [],
     };
   }
+
   getTaskList() {
     return this.taskList;
   }

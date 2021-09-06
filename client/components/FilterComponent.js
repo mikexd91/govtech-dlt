@@ -1,14 +1,28 @@
-import React, { useState } from "react";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
-import Input from "@material-ui/core/Input";
-import InputLabel from "@material-ui/core/InputLabel";
-import MenuItem from "@material-ui/core/MenuItem";
-import FormControl from "@material-ui/core/FormControl";
-import ListItemText from "@material-ui/core/ListItemText";
-import Select from "@material-ui/core/Select";
-import Checkbox from "@material-ui/core/Checkbox";
-import Button from "@material-ui/core/Button";
-import styled from "styled-components";
+/* eslint-disable react/prop-types */
+/* eslint-disable import/extensions */
+/* eslint-disable react/jsx-filename-extension */
+import React, { useState } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Input from '@material-ui/core/Input';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import ListItemText from '@material-ui/core/ListItemText';
+import Select from '@material-ui/core/Select';
+import Checkbox from '@material-ui/core/Checkbox';
+import Button from '@material-ui/core/Button';
+import styled from 'styled-components';
+
+import {
+  DEFAULT_STATUS,
+  UNDER_REVIEW_STATUS,
+  IN_PROGRESS_STATUS,
+  DONE_STATUS,
+  BLOCKED_STATUS,
+  HIGH_PRIORITY,
+  MEDIUM_PRIORITY,
+  LOW_PRIORITY,
+} from '../constant.js';
 
 const Div = styled.div`
   display: flex;
@@ -25,8 +39,8 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 300,
   },
   chips: {
-    display: "flex",
-    flexWrap: "wrap",
+    display: 'flex',
+    flexWrap: 'wrap',
   },
   chip: {
     margin: 2,
@@ -46,17 +60,6 @@ const MenuProps = {
     },
   },
 };
-
-import {
-  DEFAULT_STATUS,
-  UNDER_REVIEW_STATUS,
-  IN_PROGRESS_STATUS,
-  DONE_STATUS,
-  BLOCKED_STATUS,
-  HIGH_PRIORITY,
-  MEDIUM_PRIORITY,
-  LOW_PRIORITY,
-} from "../constant.js";
 
 const status = [
   DEFAULT_STATUS,
@@ -83,7 +86,7 @@ export default function FilterComponent({ handleFilter }) {
   };
 
   const onFilter = () => {
-    let result = {
+    const result = {
       status: selectedStatus,
       priority: selectedPriority,
     };
@@ -102,7 +105,7 @@ export default function FilterComponent({ handleFilter }) {
           value={selectedPriority}
           onChange={handlePriorityChange}
           input={<Input />}
-          renderValue={(selected) => selected.join(", ")}
+          renderValue={(selected) => selected.join(', ')}
           MenuProps={MenuProps}
         >
           {priority.map((item) => (
@@ -123,7 +126,7 @@ export default function FilterComponent({ handleFilter }) {
           value={selectedStatus}
           onChange={handleStatusChange}
           input={<Input />}
-          renderValue={(selected) => selected.join(", ")}
+          renderValue={(selected) => selected.join(', ')}
           MenuProps={MenuProps}
         >
           {status.map((item) => (

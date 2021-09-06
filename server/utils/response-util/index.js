@@ -1,22 +1,5 @@
 // ------- Logging Tools -------
-const SIGNALE = require("signale"); // Used for more readable CLI Logging
-const {
-  ValidationError,
-  BadRequestError,
-  InternalServerError,
-} = require("./httpErrorTypes");
-// ---- Exported Methods ----
-
-exports.success = (res, data) => {
-  return sendResponse(res, 200, "success", data);
-};
-
-exports.failure = (res, error) => {
-  if (!process.env.DEBUG) {
-    SIGNALE.error(error);
-  }
-  return sendErrResponse(res, error);
-};
+const SIGNALE = require('signale'); // Used for more readable CLI Logging
 
 // ---- Supporting Methods ----
 const sendErrResponse = (res, error) => {
@@ -33,9 +16,19 @@ const sendErrResponse = (res, error) => {
 const sendResponse = (res, code, description, data) => {
   res.status(code).send({
     status: {
-      code: code,
-      description: description,
+      code,
+      description,
     },
-    data: data,
+    data,
   });
+};
+
+// ---- Exported Methods ----
+exports.success = (res, data) => sendResponse(res, 200, 'success', data);
+
+exports.failure = (res, error) => {
+  if (!process.env.DEBUG) {
+    SIGNALE.error(error);
+  }
+  return sendErrResponse(res, error);
 };
